@@ -1,4 +1,4 @@
-package com.orangexxx.test;
+package com.orangexxx.home.test.database;
 
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;

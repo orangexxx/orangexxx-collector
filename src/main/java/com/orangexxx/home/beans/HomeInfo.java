@@ -14,6 +14,116 @@ public class HomeInfo extends ObjectBean {
 	private String mSize;
 	private String mFeel;
 	private String mColor;
+	private String mURL;
+	
+	
+	public HomeInfo() {
+		
+	}
+	
+	private HomeInfo(Builder builder) {
+		this.mID=builder.mID;
+		this.mTitle=builder.mTitle;
+		this.mSpace=builder.mSpace;
+		this.mStyle=builder.mStyle;
+		this.mPart=builder.mPart;
+		this.mShape=builder.mShape;
+		this.mStuff=builder.mStuff;
+		this.mDesigner=builder.mDesigner;
+		this.mBudget=builder.mBudget;
+		this.mSize=builder.mSize;
+		this.mFeel=builder.mFeel;
+		this.mColor=builder.mColor;
+		this.mURL=builder.mURL;
+	}
+	
+	public static class Builder {
+		private int mID=0;
+		private String mTitle="";
+		private String mSpace="";
+		private String mStyle="";
+		private String mPart="";
+		private String mShape="";
+		private String mStuff="";
+		private String mDesigner="";
+		private String mBudget="";
+		private String mSize="";
+		private String mFeel="";
+		private String mColor="";
+		private String mURL="";
+		
+		public Builder() {}
+		
+		
+		public Builder id(int id) {
+			this.mID=id;
+			return this;
+		}
+		
+		public Builder title(String title) {
+			this.mTitle=title;
+			return this;
+		}
+		
+		public Builder space(String space) {
+			this.mSpace=space;
+			return this;
+		}
+		
+		public Builder style(String style) {
+			this.mStyle=style;	
+			return this;	
+		}
+		
+		public Builder part(String part) {
+			this.mPart=part;
+			return this;
+		}
+		
+		public Builder shape(String shape) {
+			this.mShape=shape;
+			return this;
+		}
+		
+		public Builder stuff(String stuff) {
+			this.mStuff=stuff;
+			return this;
+		}
+		
+		public Builder designer(String designer) {
+			this.mDesigner=designer;
+			return this;
+		}
+		
+		public Builder budget(String budget) {
+			this.mBudget=budget;
+			return this;
+		}
+		
+		public Builder size(String size) {
+			this.mSize=size;
+			return this;
+		}
+		
+		public Builder feel(String feel) {
+			this.mFeel=feel;
+			return this;
+		}
+		
+		public Builder color(String color) {
+			this.mColor=color;
+			return this;
+		}
+		
+		public Builder url(String url) {
+			this.mURL=url;
+			return this;
+		}
+		
+		public HomeInfo build() {
+			return new HomeInfo(this);
+		}
+	}
 	public int getmID() {
 		return mID;
 	}
@@ -85,6 +195,12 @@ public class HomeInfo extends ObjectBean {
 	}
 	public void setmColor(String mColor) {
 		this.mColor = mColor;
+	}
+	public String getmURL() {
+		return mURL;
+	}
+	public void setmURL(String mURL) {
+		this.mURL = mURL;
 	}
 	
 	

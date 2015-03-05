@@ -7,6 +7,53 @@ public class HomeImage extends ObjectBean {
 	private int mHomeID;
 	private String mURL;
 	private String mInfo;
+	
+	public HomeImage() {
+		
+	}
+	
+	private HomeImage(Builder builder) {
+		this.mID=builder.mID;
+		this.mHomeID=builder.mHomeID;
+		this.mURL=builder.mURL;
+		this.mInfo=builder.mInfo;
+	}
+	
+	public static class Builder {
+		private int mID;
+		private int mHomeID;
+		private String mURL;
+		private String mInfo;
+		
+		public Builder(){
+			
+		}
+		
+		public Builder id(int id) {
+			this.mID=id;
+			return this;
+		}
+		
+		public Builder homeID(int homeID) {
+			this.mHomeID=homeID;
+			return this;
+		}
+		
+		public Builder url(String url) {
+			this.mURL=url;
+			return this;
+		}
+		
+		public Builder info(String info) {
+			this.mInfo=info;
+			return this;
+		}
+		
+		public HomeImage build() {
+			return new HomeImage(this);
+		}
+	}
+	
 	public int getmID() {
 		return mID;
 	}

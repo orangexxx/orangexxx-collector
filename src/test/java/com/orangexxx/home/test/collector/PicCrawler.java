@@ -1,4 +1,4 @@
-package orangexxx.orangexxx_collector;
+package com.orangexxx.home.test.collector;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;

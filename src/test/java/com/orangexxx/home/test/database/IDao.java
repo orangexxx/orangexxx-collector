@@ -1,4 +1,4 @@
-package com.orangexxx.test;
+package com.orangexxx.home.test.database;
 
 public interface IDao {
 
