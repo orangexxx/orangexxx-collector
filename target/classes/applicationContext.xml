@@ -39,6 +39,9 @@
 	<bean id="service" class="com.orangexxx.home.test.database.ServiceImpl">
 		<property name="dao" ref="daoImpl"></property>
 	</bean>
-
+	<bean id="homeInfoCrawler" class="com.orangexxx.home.collector.HomeInfoCrawler">
+		<property name="homeInfoService" ref="homeInfoService"></property>
+		<property name="homeImageService" ref="homeImageService"></property>
+	</bean>
 
 </beans>

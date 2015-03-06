@@ -33,6 +33,17 @@ public class HomeInfoCrawler extends BreadthCrawler {
 			}
 		}
 	}
+	
+	public void visitURL(String url) throws Exception{
+		Document doc = Jsoup.connect(url).get();
+		Element result = doc.select("div.sift_result").first();
+		if (result != null) {
+			Element list = result.select("ul").first();
+			if (list != null) {
+				handleResultList(list);
+			}
+		}
+	}
 
 	private void handleResultList(Element list) {
 		Elements items = list.select("li");
@@ -52,6 +63,7 @@ public class HomeInfoCrawler extends BreadthCrawler {
 		if (t != null) {
 			homeInfo.setmTitle(t.text().trim());
 			homeInfo.setmURL(t.attr("href").trim());
+			System.out.println(homeInfo.getmTitle());
 		}
 		Element tag = item.select(".type").first();
 		if (tag != null) {
@@ -74,9 +86,10 @@ public class HomeInfoCrawler extends BreadthCrawler {
 				for (Element img : images) {
 					homeImage.setmURL(img.attr("rel").trim());
 					homeImage.setmInfo(img.attr("alt").trim());
+					homeImageService.insertObject(homeImage);
 				}
 			}
-			homeImageService.insertObject(homeImage);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

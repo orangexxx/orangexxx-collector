@@ -8,6 +8,10 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.orangexxx.home.collector.HomeInfoCrawler;
 
 public class JTest {
 
@@ -125,10 +129,16 @@ public class JTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		JTest test = new JTest();
+		ApplicationContext context =new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		HomeInfoCrawler crawler = (HomeInfoCrawler) context.getBean("homeInfoCrawler");
 		try {
-			test.visitURL("http://tuku.jia.com/tag/");
+			crawler.visitURL("http://tuku.jia.com/tag/");
+			System.out.println("OK!");
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			//context.
 		}
 	}
 
