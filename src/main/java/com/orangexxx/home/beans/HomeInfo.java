@@ -2,6 +2,21 @@ package com.orangexxx.home.beans;
 
 public class HomeInfo extends ObjectBean {
 
+	
+	public static String HOME_INFO_ID = "house_id";
+	public static String HOME_INFO_TITLE = "title";
+	public static String HOME_INFO_SPACE = "space";
+	public static String HOME_INFO_STYLE = "style";
+	public static String HOME_INFO_PART = "part";
+	public static String HOME_INFO_SHAPE = "shape";
+	public static String HOME_INFO_STUFF = "stuff";
+	public static String HOME_INFO_DESIGNER = "designer";
+	public static String HOME_INFO_BUDGET = "budget";
+	public static String HOME_INFO_SIZE = "size";
+	public static String HOME_INFO_FEEL = "feel";
+	public static String HOME_INFO_COLOR = "color";
+	public static String HOME_INFO_URL = "url";
+	
 	private int mID;
 	private String mTitle;
 	private String mSpace;
@@ -18,7 +33,18 @@ public class HomeInfo extends ObjectBean {
 	
 	
 	public HomeInfo() {
-		
+		this.mTitle = "";
+		this.mSpace = "";
+		this.mStyle = "";
+		this.mPart = "";
+		this.mShape = "";
+		this.mStuff = "";
+		this.mDesigner = "";
+		this.mBudget = "";
+		this.mSize = "";
+		this.mFeel = "";
+		this.mColor = "";
+		this.mURL = "";
 	}
 	
 	private HomeInfo(Builder builder) {

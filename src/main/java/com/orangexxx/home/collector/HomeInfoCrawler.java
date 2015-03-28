@@ -16,14 +16,14 @@ import com.orangexxx.home.beans.HomeInfo;
 import com.orangexxx.home.service.HomeImageService;
 import com.orangexxx.home.service.HomeInfoService;
 
-public class HomeInfoCrawler extends BreadthCrawler {
+public class HomeInfoCrawler extends AbstractCrawler {
 
 	private HomeInfoService homeInfoService;
 	private HomeImageService homeImageService;
 	
 	@Override
 	public void visit(Page page) {
-		System.out.println(page.getUrl());
+		//System.out.println(page.getUrl());
 		Document doc = Jsoup.parse(page.getHtml());
 		Element result = doc.select("div.sift_result").first();
 		if (result != null) {
@@ -34,7 +34,8 @@ public class HomeInfoCrawler extends BreadthCrawler {
 		}
 	}
 	
-	public void visitURL(String url) throws Exception{
+	@Override
+	public void visitURL(String url) throws IOException{
 		Document doc = Jsoup.connect(url).get();
 		Element result = doc.select("div.sift_result").first();
 		if (result != null) {
@@ -63,7 +64,7 @@ public class HomeInfoCrawler extends BreadthCrawler {
 		if (t != null) {
 			homeInfo.setmTitle(t.text().trim());
 			homeInfo.setmURL(t.attr("href").trim());
-			System.out.println(homeInfo.getmTitle());
+			//System.out.println(homeInfo.getmTitle());
 		}
 		Element tag = item.select(".type").first();
 		if (tag != null) {
@@ -98,8 +99,6 @@ public class HomeInfoCrawler extends BreadthCrawler {
 
 	private void handleItemTag(Element tagNode, HomeInfo homeInfo) {
 		Elements tags = tagNode.select("a[href]");
-		//HashMap<String, String> tagMap = new HashMap<String, String>();
-		//System.out.print("tags: ");
 		for (Element tag : tags) {	
 			String href = tag.attr("href");
 			String tagText = tag.text().trim();
@@ -166,8 +165,7 @@ public class HomeInfoCrawler extends BreadthCrawler {
 			}
 		}
 	}
-	
-	
+		
 	public HomeInfoService getHomeInfoService() {
 		return homeInfoService;
 	}

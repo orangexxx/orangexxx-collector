@@ -16,9 +16,9 @@ public class HomeInfoServiceImpl extends AbstractService implements
 		HomeInfoService {
 	
 	
-	public static Object getInstance() {
+	public static HomeInfoService getInstance() {
 		// TODO Auto-generated method stub
-		return getContext().getBean("homeInfoService");
+		return (HomeInfoService)getContext().getBean("homeInfoService");
 	}
 
 	public int insertObject(HomeInfo obj) {

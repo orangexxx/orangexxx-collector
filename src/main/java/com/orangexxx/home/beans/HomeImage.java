@@ -2,6 +2,10 @@ package com.orangexxx.home.beans;
 
 public class HomeImage extends ObjectBean {
 
+	public static String HOME_IMAGE_ID = "image_id";
+	public static String HOME_IMAGE_HOME_ID = "house_id";
+	public static String HOME_IMAGE_URL = "url";
+	public static String HOME_IMAGE_INFO = "info";
 	
 	private int mID;
 	private int mHomeID;
@@ -9,7 +13,9 @@ public class HomeImage extends ObjectBean {
 	private String mInfo;
 	
 	public HomeImage() {
-		
+		this.mHomeID = 0;
+		this.mURL = "";
+		this.mInfo = "";
 	}
 	
 	private HomeImage(Builder builder) {

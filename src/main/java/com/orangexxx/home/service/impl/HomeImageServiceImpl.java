@@ -19,9 +19,9 @@ public class HomeImageServiceImpl extends AbstractService implements
 	
 	
 	
-	public static Object getInstance() {
+	public static HomeImageService getInstance() {
 		// TODO Auto-generated method stub
-		return getContext().getBean("homeImageService");
+		return (HomeImageService)getContext().getBean("homeImageService");
 	}
 
 	public int insertObject(HomeImage obj) {
