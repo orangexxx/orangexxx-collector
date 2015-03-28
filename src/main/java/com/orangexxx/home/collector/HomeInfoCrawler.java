@@ -8,7 +8,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.util.StringUtils;
 
-import cn.edu.hfut.dmic.webcollector.crawler.BreadthCrawler;
 import cn.edu.hfut.dmic.webcollector.model.Page;
 
 import com.orangexxx.home.beans.HomeImage;

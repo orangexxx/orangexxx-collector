@@ -13,9 +13,7 @@ public class HomeImage extends ObjectBean {
 	private String mInfo;
 	
 	public HomeImage() {
-		this.mHomeID = 0;
-		this.mURL = "";
-		this.mInfo = "";
+		
 	}
 	
 	private HomeImage(Builder builder) {
